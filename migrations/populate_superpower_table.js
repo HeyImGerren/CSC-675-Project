@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert( 'superpower', [
-      {hero_name:"Superman", superpower_name:"Flight"},
+      {superpower_name:"Flight"},
 
       ], {} );
   },

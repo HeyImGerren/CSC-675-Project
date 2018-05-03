@@ -2,10 +2,13 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('publisher', {
-      publisher_name: {
+      publisher_id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      publisher_name: {
         type: Sequelize.TEXT
       },
       release_date: {
