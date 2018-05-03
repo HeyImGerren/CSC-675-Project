@@ -70,4 +70,112 @@ app.use(function(err, req, res, next) {
 //   })
 //   .catch( error => console.log( "ERROR ADDING IN HERO:", error ));
 
+let objectToBeParsed = [
+  {
+    "hero_id": 1,
+    "hero_name": "Superman"
+  },
+  {
+    "hero_id": 2,
+    "hero_name": "Batman"
+  },
+  {
+    "hero_id": 3,
+    "hero_name": "Wonder Woman"
+  },
+  {
+    "hero_id": 4,
+    "hero_name": "Cyborg"
+  },
+  {
+   "hero_id": 5,
+    "hero_name": "Flash"
+  },
+  {
+    "hero_id": 6,
+    "hero_name": "Martian Manhunter"
+  },
+   {
+    "hero_id": 7,
+    "hero_name": "Green Lantern"
+  },
+   {
+    "hero_id": 8,
+    "hero_name": "Robin"
+  },
+   {
+    "hero_id": 9,
+    "hero_name": "Beast Boy"
+  },
+   {
+    "hero_id": 10,
+    "hero_name": "Starfire"
+  },
+   {
+    "hero_id": 11,
+    "hero_name": "Raven"
+  },
+   {
+    "hero_id": 12,
+    "hero_name": "Iron Man"
+  },
+   {
+    "hero_id": 13,
+    "hero_name": "Captain America"
+  },
+   {
+    "hero_id": 14,
+    "hero_name": "Thor"
+  },
+   {
+    "hero_id": 15,
+    "hero_name": "Hulk"
+  },
+   {
+    "hero_id": 16,
+    "hero_name": "Black Widow"
+  },
+   {
+    "hero_id": 17,
+    "hero_name": "Hawkeye"
+  },
+   {
+    "hero_id": 18,
+    "hero_name": "Professor X"
+  },
+   {
+    "hero_id": 19,
+    "hero_name": "Cyclops"
+  },
+   {
+    "hero_id": 20,
+    "hero_name": "Storm"
+  },
+   {
+    "hero_id": 21,
+    "hero_name": "Wolverine"
+  },
+   {
+    "hero_id": 22,
+    "hero_name": "Jean Grey"
+  }
+]
+
+
+// console.log(objectToBeParsed[0].team_name);
+
+// {hero_name:"Superman", alias: "Clark Kent", birthplace: "Krypton", gender: "Male", eye_color: "Blue", height: 191, hair_color: "Black", weight: 101, publisher: "DC Comics"},
+
+let currentLine = '';
+
+for (item in objectToBeParsed){
+
+  // super power
+  currentLine = ` {publisher_id: ${objectToBeParsed[item].hero_id}, hero_name: "${objectToBeParsed[item].hero_name}"},`;
+
+
+  console.log(currentLine);
+}
+
+
 module.exports = app;
