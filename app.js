@@ -9,14 +9,18 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+//routes
 let index = require('./routes/index');
-let users = require('./routes/users');
+let marvel = require('./routes/marvel');
+let dc = require('./routes/dc');
+let allHeroes = require('./routes/all_heroes');
 
+let expressLayouts = require('express-ejs-layouts');
 let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,8 +30,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(expressLayouts);
+
 app.use('/', index);
+app.use('/marvel', marvel);
+app.use('/dc', dc);
+app.use('/allheroes', allHeroes);
+
 // app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,27 +58,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
 // const heroTable = require('./database/hero');
 
-// let heroObject = {
-//   h_name: "Iron Man",
-//   publisher: "Marvel Comics",
-//   alias: "Anthony Edward Stark",
-//   occupation: "Inventor",
-//   birthplace: "Long Island, New York",
-//   gender: "Male",
-//   weight: "191 kg",
-//   height: "198 cm",
-//   eye_color: "Blue",
-//   hair_color: "Black" 
-// };
-
 // heroTable
-//   .addHero( heroObject )
-//   .then( result => {
-//     console.log( result.h_name );
+//   .readHero()
+//   .then((result) => {
+//     console.log(result, result.length);
 //   })
-//   .catch( error => console.log( "ERROR ADDING IN HERO:", error ));
+//   .catch( error => console.log("error:", error));
 
 module.exports = app;

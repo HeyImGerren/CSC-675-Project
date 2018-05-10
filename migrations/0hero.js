@@ -30,6 +30,9 @@ module.exports = {
       },
       publisher: {
         type: Sequelize.TEXT
+      },
+      image: {
+        type: Sequelize.TEXT
       }
     });
   },
