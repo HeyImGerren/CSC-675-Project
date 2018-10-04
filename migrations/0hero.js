@@ -2,18 +2,12 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('hero', {
-      h_name: {
+      hero_name: {
         allowNull: false,
         primaryKey: true,
         type: Sequelize.TEXT
       },
-      publisher: {
-        type: Sequelize.TEXT
-      },
       alias: {
-        type: Sequelize.TEXT
-      },
-      occupation: {
         type: Sequelize.TEXT
       },
       birthplace: {
@@ -22,16 +16,19 @@ module.exports = {
       gender: {
         type: Sequelize.TEXT
       },
-      weight: {
-        type: Sequelize.TEXT
-      },
-      height: {
-        type: Sequelize.TEXT
-      },
       eye_color: {
         type: Sequelize.TEXT
       },
+      height: {
+        type: Sequelize.INTEGER
+      },
       hair_color: {
+        type: Sequelize.TEXT
+      },
+      weight: {
+        type: Sequelize.INTEGER
+      },
+      publisher: {
         type: Sequelize.TEXT
       }
     });

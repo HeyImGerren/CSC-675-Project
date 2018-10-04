@@ -47,22 +47,28 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+<<<<<<< HEAD
 /*
 const heroTable = require('./database/hero');
+=======
 
-let heroObject = {
-  h_name: "Iron Man",
-  publisher: "Marvel Comics",
-  alias: "Anthony Edward Stark",
-  occupation: "Inventor",
-  birthplace: "Long Island, New York",
-  gender: "Male",
-  weight: "191 kg",
-  height: "198 cm",
-  eye_color: "Blue",
-  hair_color: "Black" 
-};
+// const heroTable = require('./database/hero');
+>>>>>>> gerren
 
+// let heroObject = {
+//   h_name: "Iron Man",
+//   publisher: "Marvel Comics",
+//   alias: "Anthony Edward Stark",
+//   occupation: "Inventor",
+//   birthplace: "Long Island, New York",
+//   gender: "Male",
+//   weight: "191 kg",
+//   height: "198 cm",
+//   eye_color: "Blue",
+//   hair_color: "Black" 
+// };
+
+<<<<<<< HEAD
 heroTable
   .addHero( heroObject )
   .then( result => {
@@ -320,5 +326,13 @@ let heroObject = [
 for(item in heroObject){
   console.log(heroObject[item]);
 }
+=======
+// heroTable
+//   .addHero( heroObject )
+//   .then( result => {
+//     console.log( result.h_name );
+//   })
+//   .catch( error => console.log( "ERROR ADDING IN HERO:", error ));
+>>>>>>> gerren
 
 module.exports = app;
